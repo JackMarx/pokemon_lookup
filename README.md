@@ -36,6 +36,12 @@ Pokemon.print_list(page, query_amount)
 - `page` is for pagination and has a default of 1
 - `query_amount` is the number of pokemon on a page and has a default of 20
 
+You can use a string or integer for `page` and `query_amount`.
+
+```ruby
+Pokemon.print_list(1, 20)
+```
+
 To see an individual Pokemon, you can pass in the id or name of the Pokemon with the code below.
 
 ```ruby
@@ -43,6 +49,20 @@ print "Type the name or id of the pokemon you want to see: "
 pokemon_input = gets.chomp
 
 pokemon = Pokemon.catch(pokemon_input)
+pokemon.print_info
+```
+
+or 
+
+```ruby
+pokemon = Pokemon.catch("Pikachu")
+pokemon.print_info
+```
+
+or 
+
+```ruby
+pokemon = Pokemon.catch(25)
 pokemon.print_info
 ```
 
