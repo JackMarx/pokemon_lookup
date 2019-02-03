@@ -34,7 +34,7 @@ page = gets.chomp
 Pokemon.print_list(page, query_amount)
 ```
 - `page` is for pagination and has a default of 1
-- `query_amount` is the number of pokenmon on a page and has a default of 20
+- `query_amount` is the number of pokemon on a page and has a default of 20
 
 To see an individual Pokemon, you can pass in the id or name of the Pokemon with the code below.
 
@@ -42,8 +42,31 @@ To see an individual Pokemon, you can pass in the id or name of the Pokemon with
 print "Type the name or id of the pokemon you want to see: "
 pokemon_input = gets.chomp
 
-pokemon = Pokemon.new(pokemon_input)
+pokemon = Pokemon.catch(pokemon_input)
 pokemon.print_info
+```
+
+#### Methods on a Pokemon
+
+- `raw_data`, returns all data from the PokéAPI request in ruby
+- `id`, returns PokéAPI reference id
+- `name`, returns name of the pokemon
+- `weight`, returns weight of the pokemon
+- `types`, returns all types for this pokemon
+- `abilities`, returns all abilities for this pokemon
+- `moves`, returns all moves for this pokemon
+- `stats`, returns all stats for this pokemon, includes the stat's name, effort and base stat
+- `print_types`, prints a formatted display of this pokemon's types
+- `print_abilities`, prints a formatted display of this pokemon's abilities
+- `print_moves`, prints a formatted display of this pokemon's moves
+- `print_stats`, prints a formatted display of this pokemon's stats
+- `print_info`, prints all formatted information for a pokemon.
+
+The formatted printing methods assume a terminal width of 60 columns, if you want to configure a different terminal width you can use the following code.
+
+```ruby
+Pokemon.terminal_width # returns current terminal size configuration
+Pokemon.terminal_width = 80 # new terminal size
 ```
 
 ## License
