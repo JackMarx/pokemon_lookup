@@ -27,6 +27,7 @@ To see a list of Pokemon by id, try this code.
 ```ruby
 print "How many Pokemon would you like to see?: "
 query_amount = gets.chomp
+
 print "Which page would you like to see?: "
 page = gets.chomp
 
